@@ -12,7 +12,8 @@ span {
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; 
+  z-index: 1;
 }
 
 .right {  
@@ -25,9 +26,4 @@ span {
 .fas {
   color: red;
   align-items: flex-start;
-}
-
-.headermain {
-  position: absolute;
-  z-index: -1;
 }
