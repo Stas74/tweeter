@@ -9,7 +9,7 @@ span {
   font-family: 'Bungee', sans-serif;
 }
 
-.container {
+.top-nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between; 
