@@ -1,0 +1,16 @@
+.headermain {
+  height: 400px;
+  width: 100%;
+  background-color: rgb(236, 236, 69);
+}
+
+.image-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  display: flex;
+  justify-content: center;
+}
