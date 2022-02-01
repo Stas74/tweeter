@@ -26,7 +26,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class="container">
+    <nav class="top-nav-bar">
       <span>tweeter</span>      
       <p class="right">Write a new tweet
         <i class="fas fa-angle-double-down"></i>
@@ -43,6 +43,18 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
