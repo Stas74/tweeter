@@ -50,6 +50,30 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="post" action="/tweets">
+          <section id="container-tweets">
+            <article>
+              <header>
+                <div class="avatar">
+                  <p>avatar</p>
+                  <p>name</p>                  
+                </div>
+                <div>
+                  usernameID
+                </div>
+              </header>
+              Main text tweet!!!
+              <footer>                
+                <div class="timeago">
+                  <p>.. days ago</p>
+                </div>
+                <div class="footericons">
+                  <p><i class="fa-solid fa-flag"></i></p>
+                  <p><i class="fa-solid fa-retweet"></i></p>
+                  <p><i class="fa-solid fa-heart"></i></p>
+                </div>
+              </footer>
+            </article>
+          </section>
           <label id="tweet-text-label" for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <footer class="bottom-part">
