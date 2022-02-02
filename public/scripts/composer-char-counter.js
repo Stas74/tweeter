@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  console.log('Cheeeck!!!!');
+  console.log('Check composer.js');
   let charCount = 0;
   let leftCounter;
   $("#tweet-text").on("input", function(){
