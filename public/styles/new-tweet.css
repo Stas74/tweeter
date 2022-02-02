@@ -4,6 +4,7 @@
 
 .bottom-part {
   display: flex;
+  padding: 10px;
   justify-content: space-between;
   font-family: Bungee, sans-serif;
 }
@@ -23,6 +24,40 @@ button {
   /* border-bottom-width: thick; */
 }
 
+
 #tweet-text-label {
   font-weight: bold;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  display: flex;
+}
+
+#container-tweets {
+  border: 2px solid;
+  padding: 5px;
+}
+
+#container-tweets:hover {
+  /* border: 1px solid; */
+  /* padding: 10px; */
+  box-shadow: 5px 5px #888888;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-icons {
+  display: flex;
+}
+
+.fa-solid:hover {
+  color: gold;
 }
