@@ -2,6 +2,13 @@
   width: 100%;
 }
 
+#error {
+  color: #D8000C;
+  border: 2px solid red ;
+  background-color: #fbebeb;
+  display: none;
+}
+
 .bottom-part {
   display: flex;
   padding: 10px;

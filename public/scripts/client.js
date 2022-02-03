@@ -6,35 +6,20 @@
 
 
 $(() => {
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd" },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
+
+  $("#error").hide()
+  // loadTweets()
+ 
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  const error = (message) => {
+    $("#error").text(message);
+      $("#error").show();
+  }
 
 
   const renderTweets = function(tweets) {
@@ -77,47 +62,31 @@ $(() => {
         <p><i class="fa-solid fa-heart"></i></p>
       </div>
     </footer>
-  </article>`)
-    // const $name = $('<avatars>').text(`${data.user.name}`); 
-    // const $avatars =  $('<avatars>').text(`${data.user.avatars}`); 
-    // const $handle = $('<div>').text(`${data.user.handle}`);   
-
-    // const $header = $('<header>').addClass('header');
-
-    // $header.append($name, $avatars, $handle)
-
-    // const $text = $('<article>').text(`${data.content.text}`);
-
-    // const $created_at = $('<tweet-footer>').addClass('<timeago>').text(`${data.created_at}`);  
-
-    
-    // const $data = $('<container-tweets>');
-
-    // $data.append($header, $text, $created_at);
-
-    
+   </article>`)
+      
     return $tweet
   };
 
   $('#add-tweet').on('submit', function (event) {
     // prevent the default behaviour of the form (making a GET request to the current page)
     console.log('form has submitted');
-    event.preventDefault();    
+    event.preventDefault();
+    $("#error").hide() // hide error
   
     console.log( $( this ).serialize() );
 
-    const safeHTML = `<p>${escape(this)}</p>`;
-    // $("<div>").text(this); other check text from user
+    //const safeHTML = `<p>${escape(this)}</p>`;
+    $("<div>").text(this); // other check text from user
 
-    const data = $(safeHTML).serialize();
+    const data = $(this).serialize();
     
 
     console.log('data', data);
     if (data === "text=") {
-      alert("Empty form")
+      error("Can not be empty!");      
       return
     } else if (data.length > 145) {
-      alert("Tweet to long")
+      error("Tweet is too long!");      
       return
     }
 
@@ -125,20 +94,27 @@ $(() => {
       method: 'POST',
       url: '/tweets',
       data: data
-    })
+    }).then((success) => {
+      console.log("Hello", success);      
+
+      $('#tweet-text').val('');
+      loadTweets();
+      
+   });
   });
+  
 
   const loadTweets = () => {
     $.ajax({
       url: '/tweets',
       method: 'GET'
-    }).then((success) => {
-      console.log(success);
+   }).then((success) => {
+              
 
+    // $('#container-tweets').empty();
 
-
-      renderTweets(success);
-   });
+    renderTweets(success);
+ });
   };
 
   loadTweets();  
