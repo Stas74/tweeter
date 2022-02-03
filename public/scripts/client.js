@@ -6,24 +6,62 @@
 
 
 $(() => {
-  
-  const createTweetElement = (data) => {
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
+
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    for (const tweet of tweets) {
+      console.log("tweet", tweet)
+      // calls createTweetElement for each tweet
+      let $tweetElement = createTweetElement(tweet);
+      // takes return value and appends it to the tweets container
+      $('#container-tweets').append($tweetElement);
+    }
+    
+    
+    // takes return value and appends it to the tweets container
+  }
+
+  const createTweetElement = (tweet) => {
     console.log("inside function")
-    const $data = $(`<article>
+    let $tweet = $(`<article>
     <header>
       <div class="tweet-header">
         <div class="avatar">
-        <img width="70px" height="70px" alt="profile img" src="${data.user.avatars}"></img>
-        <p>${data.user.name}</p>
+        <img width="70px" height="70px" alt="profile img" src="${tweet.user.avatars}"></img>
+        <p>${tweet.user.name}</p>
         </div>
       <div>                
-        <p>${data.user.handle}</p>
+        <p>${tweet.user.handle}</p>
       </div>
     </header>
-    ${data.content.text}
+    ${tweet.content.text}
     <footer class="tweet-footer">                
       <div class="timeago">
-        <p>${timeago.format(data.created_at)}</p>
+        <p>${timeago.format(tweet.created_at)}</p>
       </div>
       <div class="footer-icons">
         <p><i class="fa-solid fa-flag"></i></p>
@@ -50,27 +88,14 @@ $(() => {
     // $data.append($header, $text, $created_at);
 
     
-    return $data
+    return $tweet
   };
 
-  // Test / driver code (temporary). Eventually will get this from the server.
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
-  }
-
-  const $tweet = createTweetElement(tweetData);
+  renderTweets(data);  
 
   // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  $('#container-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  // console.log($tweet); // to see what it looks like
+  // $('#container-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
 });
 
