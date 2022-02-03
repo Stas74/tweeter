@@ -96,12 +96,19 @@ $(() => {
     // prevent the default behaviour of the form (making a GET request to the current page)
     console.log('form has submitted');
     event.preventDefault();    
-
+  
     console.log( $( this ).serialize() );
 
     const data = $('#add-tweet').serialize();
 
     console.log('data', data);
+    if (data === "text=") {
+      alert("Empty form")
+      return
+    } else if (data.length > 145) {
+      alert("to big tweet")
+      return
+    }
 
     $.ajax({
       method: 'POST',
