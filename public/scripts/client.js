@@ -91,12 +91,27 @@ $(() => {
     return $tweet
   };
 
-  renderTweets(data);  
+  $('#add-tweet').on('submit', function (event) {
+    // prevent the default behaviour of the form (making a GET request to the current page)
+    console.log('form has submitted');
+    event.preventDefault();    
 
-  // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $('#container-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    console.log( $( this ).serialize() );
 
+    const data = $('#add-tweet').serialize();
+
+    console.log('data', data);
+
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: data
+    })
+  });
+
+  renderTweets(data);
+
+  
 });
 
 
@@ -111,3 +126,7 @@ $(() => {
 // });
 
 // const $tweet = $(`<article class="tweet">Hello world</article>`);
+
+// Test / driver code (temporary)
+  // console.log($tweet); // to see what it looks like
+  // $('#container-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
