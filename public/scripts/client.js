@@ -33,13 +33,14 @@ $(() => {
 
   const renderTweets = function(tweets) {
     // loops through tweets
+    // $('#container-tweets').empty();
     console.log("tweets", tweets)
     for (const tweet of tweets) {
       console.log("tweet", tweet)
       // calls createTweetElement for each tweet
       let $tweetElement = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('#container-tweets').append($tweetElement);
+      $('#container-tweets').prepend($tweetElement); // move last tweet in front
     }
     
     
@@ -106,7 +107,7 @@ $(() => {
       alert("Empty form")
       return
     } else if (data.length > 145) {
-      alert("to big tweet")
+      alert("Tweet to long")
       return
     }
 
@@ -123,6 +124,8 @@ $(() => {
       method: 'GET'
     }).then((success) => {
       console.log(success);
+
+
 
       renderTweets(success);
    });
