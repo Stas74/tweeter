@@ -30,6 +30,12 @@ $(() => {
   //     "created_at": 1461113959088
   //   }
   // ]
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
 
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -40,7 +46,7 @@ $(() => {
       // calls createTweetElement for each tweet
       let $tweetElement = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('#container-tweets').prepend($tweetElement); // move last tweet in front
+      $('#container-tweets').prepend($tweetElement); // move last tweet on top
     }
     
     
@@ -100,7 +106,11 @@ $(() => {
   
     console.log( $( this ).serialize() );
 
-    const data = $('#add-tweet').serialize();
+    const safeHTML = `<p>${escape(this)}</p>`;
+    // $("<div>").text(this); other check text from user
+
+    const data = $(safeHTML).serialize();
+    
 
     console.log('data', data);
     if (data === "text=") {
