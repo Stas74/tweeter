@@ -14,6 +14,7 @@ $(() => {
   };
 
   const renderTweets = function(tweets) {
+    $("#container-tweets").html("");
     for (const tweet of tweets) {
       let $tweetElement = createTweetElement(tweet);
       $('#container-tweets').prepend($tweetElement); // move sended tweet on top
