@@ -3,41 +3,16 @@
   margin-top: 120px;
   width: 100%;
   background-color: rgb(236, 236, 69);
-  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
-  /*opacity: 0.5;
-  top: 120px;  
-  height: 400px;
-  width: 100%; 
-  position: absolute; */
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");  
   z-index: 0; 
 }
 
 @media only screen and (min-width: 1024px) { 
   .headermain {
     width: 60%;
-    margin-top: 40px;
-    /* margin-top: 200px;   
-    
-    height: 50%;
-    float: left;    */
+    margin-top: 40px;    
   }
 }
-
-/* .headermain::after {
-   content: "";
-  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
-  opacity: 0.5;
-  top: 120px;  
-  height: 400px;
-  width: 100%; 
-  position: absolute;
-  z-index: 0;    
-} */
-
-
-/* background-color: #00238c; */
-/* background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png"); */
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 .image-profile {
   display: flex;

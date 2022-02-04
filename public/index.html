@@ -62,38 +62,15 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <div id="error">Check!!! Too long tweet!</div>
+        <div id="error">Error check</div>
         <form id="add-tweet" method="post" action="/tweets">
           <label id="tweet-text-label" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Tell please..."></textarea>
           <footer class="bottom-part">
             <button type="submit">Tweet</button>
             <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
           </footer>
           <section id="container-tweets">
-            <!-- <article>
-              <header>
-                <div class="tweet-header">
-                  <div class="avatar">
-                    <img width="70px" height="70px" alt="profile img" src="https://imgur.com/73hZDYK.png">                  
-                    <p>name</p>
-                  </div>
-                <div>                
-                  <p>handle</p>
-                </div>
-              </header>
-              content
-              <footer class="tweet-footer">                
-                <div class="timeago">
-                  <p>created_at</p>
-                </div>
-                <div class="footer-icons">
-                  <p><i class="fa-solid fa-flag"></i></p>
-                  <p><i class="fa-solid fa-retweet"></i></p>
-                  <p><i class="fa-solid fa-heart"></i></p>
-                </div>
-              </footer>
-            </article> -->
           </section>
         </form>
       </section>
