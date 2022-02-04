@@ -6,8 +6,9 @@ Uses inside HTML, CSS, JS, jQuery and AJAX. Created to practice front-end skill.
 ## Features
 
 You can send by Tweeter a message (length is limited to 140 characters, of course, you always can see a counter, welcome back deja vu) instead of real users and display them on the same page without a redirect. Users have a random name, avatars, and username. 
+This app also has a Desktop version. It means you can see more tweets. 
 
-Almost have the same option as having "Big Brother", but this app is for you only.
+In total, this app almost has the same option as having "Big Brother", but this app is for you only.
 
 
 ## Screenshoots
