@@ -35,3 +35,18 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ @media only screen and (min-width: 1024px) {
+   .contents {
+     display: flex;
+     gap: 50px;
+     margin: 200px 50px 0 50px;
+   }
+
+   .top-nav-bar {
+     width: 100%;
+   }
+   
+   
+    
+ }
