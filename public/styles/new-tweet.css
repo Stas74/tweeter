@@ -47,7 +47,14 @@ button {
 
 #container-tweets {
   border: 2px solid;
+  padding: 5px;  
+}
+
+#article {
   padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  word-break: break-word;
 }
 
 #container-tweets:hover {
