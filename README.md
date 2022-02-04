@@ -10,6 +10,10 @@ You can send by Tweeter a message (length is limited to 140 characters, of cours
 Almost have the same option as having "Big Brother", but this app is for you only.
 
 
+## Screenshoots
+
+!["App overview"](https://github.com/Stas74/tweeter/blob/master/docs/Overview.PNG)
+
 ## Dependencies
 
 - Express
