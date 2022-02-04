@@ -14,8 +14,10 @@ Almost have the same option as having "Big Brother", but this app is for you onl
 
 App overview
 !["App overview screenshot"](https://github.com/Stas74/tweeter/blob/master/docs/Overview.PNG)
-Error animaton (Tweew more them 140 characters)
+
+Error animaton (Tweet more them 140 characters)
 !["Error Long Tweet animaton"](https://github.com/Stas74/tweeter/blob/master/docs/Error-anamation.gif)
+
 Resize animation
 !["App resize animation"](https://github.com/Stas74/tweeter/blob/master/docs/Resize-animation.gif)
 
